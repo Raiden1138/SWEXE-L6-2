@@ -1,0 +1,9 @@
+<%= form_for @cart_items , url: {action: :create} do |f| %>
+<%= f.label :name, '商品名　：'%>
+<%= Product.find(@cart_items.product_id).name%><br>
+<%= f.label :name, '商品価格：'%>
+<%= Product.find(@cart_items.product_id).price%>円<br>
+<%= f.label :qty, '数量　　：' %>
+<%= f.text_field :qty %>
+<%= f.submit '登録' %>
+<% end %>
